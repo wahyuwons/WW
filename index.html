@@ -4,640 +4,523 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wahyuwono — Technology Director & AI Leader</title>
-  <meta name="description" content="Technology Director & AI Implementation Leader. Building intelligent digital systems for governments and global organizations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ═══════════════════════════ CURSOR ═══════════════════════════ -->
-  <div id="cursor">
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-bg"></div>
+  <div class="ld-content">
+    <div class="ld-num"><span id="ld-count">0</span><sup>%</sup></div>
+    <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
+    <div class="ld-label">Wahyuwono · Portfolio</div>
+  </div>
+  <!-- Loader ornaments -->
+  <svg class="ld-ring ld-ring1" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(233,196,106,.12)" stroke-width="1"/><circle cx="100" cy="100" r="70" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="1"/></svg>
+  <svg class="ld-ring ld-ring2" viewBox="0 0 100 100"><polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="rgba(233,196,106,.1)" stroke-width="1"/></svg>
+</div>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo" data-mag>W<span>.</span></a>
+  <ul class="nav-list">
+    <li><a href="#about"          class="nav-link" data-mag>About</a></li>
+    <li><a href="#experience"     class="nav-link" data-mag>Experience</a></li>
+    <li><a href="#skills"         class="nav-link" data-mag>Skills</a></li>
+    <li><a href="#education"      class="nav-link" data-mag>Education</a></li>
+    <li><a href="#certifications" class="nav-link" data-mag>Certs</a></li>
+  </ul>
+  <a href="mailto:wahyuwons@gmail.com" class="nav-hire" data-mag>Hire Me</a>
+  <button id="ham" class="hamburger" aria-label="Menu"><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div id="mob-nav">
+  <div class="mob-links">
+    <a href="#about"          class="mob-link">About</a>
+    <a href="#experience"     class="mob-link">Experience</a>
+    <a href="#skills"         class="mob-link">Skills</a>
+    <a href="#education"      class="mob-link">Education</a>
+    <a href="#contact"        class="mob-link">Contact</a>
+  </div>
+  <!-- Mobile nav ornament -->
+  <svg class="mob-orb" viewBox="0 0 400 400"><circle cx="200" cy="200" r="160" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="80"/></svg>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="hero">
+
+  <!-- Ornaments layer -->
+  <div class="hero-orns" aria-hidden="true">
+    <!-- Big rotating ring -->
+    <svg class="orn orn-ring-big" viewBox="0 0 600 600" id="orn-ring-big">
+      <circle cx="300" cy="300" r="280" fill="none" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="230" fill="none" stroke="rgba(233,196,106,.04)" stroke-width="1" stroke-dasharray="8 16"/>
+      <circle cx="300" cy="300" r="180" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="1"/>
+    </svg>
+    <!-- Hexagon -->
+    <svg class="orn orn-hex" viewBox="0 0 120 140" id="orn-hex">
+      <polygon points="60,4 116,34 116,106 60,136 4,106 4,34" fill="none" stroke="rgba(233,196,106,.18)" stroke-width="1"/>
+      <polygon points="60,20 100,42 100,98 60,120 20,98 20,42" fill="none" stroke="rgba(233,196,106,.10)" stroke-width="1"/>
+    </svg>
+    <!-- Cross hair -->
+    <svg class="orn orn-cross" viewBox="0 0 60 60" id="orn-cross">
+      <line x1="30" y1="0"  x2="30" y2="60" stroke="rgba(233,196,106,.25)" stroke-width="1"/>
+      <line x1="0"  y1="30" x2="60" y2="30" stroke="rgba(233,196,106,.25)" stroke-width="1"/>
+      <circle cx="30" cy="30" r="8" fill="none" stroke="rgba(233,196,106,.3)" stroke-width="1"/>
+      <circle cx="30" cy="30" r="3" fill="rgba(233,196,106,.5)"/>
+    </svg>
+    <!-- Dot grid -->
+    <svg class="orn orn-dots" viewBox="0 0 140 140" id="orn-dots">
+      <g fill="rgba(233,196,106,.2)">
+        <circle r="2" cx="10" cy="10"/><circle r="2" cx="30" cy="10"/><circle r="2" cx="50" cy="10"/>
+        <circle r="2" cx="70" cy="10"/><circle r="2" cx="90" cy="10"/><circle r="2" cx="110" cy="10"/>
+        <circle r="2" cx="130" cy="10"/>
+        <circle r="2" cx="10" cy="30"/><circle r="2" cx="30" cy="30"/><circle r="2" cx="50" cy="30"/>
+        <circle r="2" cx="70" cy="30"/><circle r="2" cx="90" cy="30"/><circle r="2" cx="110" cy="30"/>
+        <circle r="2" cx="130" cy="30"/>
+        <circle r="2" cx="10" cy="50"/><circle r="2" cx="30" cy="50"/><circle r="2" cx="50" cy="50"/>
+        <circle r="2" cx="70" cy="50"/><circle r="2" cx="90" cy="50"/><circle r="2" cx="110" cy="50"/>
+        <circle r="2" cx="130" cy="50"/>
+        <circle r="2" cx="10" cy="70"/><circle r="2" cx="30" cy="70"/><circle r="2" cx="50" cy="70"/>
+        <circle r="2" cx="70" cy="70"/><circle r="2" cx="90" cy="70"/><circle r="2" cx="110" cy="70"/>
+        <circle r="2" cx="130" cy="70"/>
+        <circle r="2" cx="10" cy="90"/><circle r="2" cx="30" cy="90"/><circle r="2" cx="50" cy="90"/>
+        <circle r="2" cx="70" cy="90"/><circle r="2" cx="90" cy="90"/><circle r="2" cx="110" cy="90"/>
+        <circle r="2" cx="130" cy="90"/>
+        <circle r="2" cx="10" cy="110"/><circle r="2" cx="30" cy="110"/><circle r="2" cx="50" cy="110"/>
+        <circle r="2" cx="70" cy="110"/><circle r="2" cx="90" cy="110"/><circle r="2" cx="110" cy="110"/>
+        <circle r="2" cx="130" cy="110"/>
+        <circle r="2" cx="10" cy="130"/><circle r="2" cx="30" cy="130"/><circle r="2" cx="50" cy="130"/>
+        <circle r="2" cx="70" cy="130"/><circle r="2" cx="90" cy="130"/><circle r="2" cx="110" cy="130"/>
+        <circle r="2" cx="130" cy="130"/>
+      </g>
+    </svg>
+    <!-- Triangle -->
+    <svg class="orn orn-tri" viewBox="0 0 80 80" id="orn-tri">
+      <polygon points="40,4 76,68 4,68" fill="none" stroke="rgba(233,196,106,.22)" stroke-width="1"/>
+      <polygon points="40,20 62,56 18,56" fill="none" stroke="rgba(233,196,106,.12)" stroke-width="1"/>
+    </svg>
+    <!-- Line decoration -->
+    <svg class="orn orn-lines" viewBox="0 0 200 20" id="orn-lines">
+      <line x1="0" y1="4"  x2="200" y2="4"  stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="0" y1="10" x2="200" y2="10" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="0" y1="16" x2="200" y2="16" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+    </svg>
+    <!-- Diamond -->
+    <svg class="orn orn-diamond" viewBox="0 0 60 60" id="orn-diamond">
+      <polygon points="30,2 58,30 30,58 2,30" fill="none" stroke="rgba(233,196,106,.3)" stroke-width="1"/>
+      <polygon points="30,14 46,30 30,46 14,30" fill="none" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <circle cx="30" cy="30" r="3" fill="rgba(233,196,106,.4)"/>
+    </svg>
+    <!-- Small floating circles -->
+    <div class="orn-blob blob1"></div>
+    <div class="orn-blob blob2"></div>
+    <div class="orn-blob blob3"></div>
   </div>
 
-  <!-- ═══════════════════════════ LOADER ═══════════════════════════ -->
-  <div id="loader">
-    <div class="loader-counter">
-      <span id="loader-num">0</span><span class="loader-pct">%</span>
-    </div>
-    <div class="loader-bar-wrap">
-      <div class="loader-bar" id="loader-bar"></div>
-    </div>
-    <div class="loader-name">Wahyuwono</div>
-  </div>
-
-  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
-  <nav id="nav">
-    <a href="#hero" class="nav-logo" data-magnetic>W<span>.</span></a>
-    <ul class="nav-list">
-      <li><a href="#about" class="nav-link" data-magnetic>About</a></li>
-      <li><a href="#experience" class="nav-link" data-magnetic>Experience</a></li>
-      <li><a href="#skills" class="nav-link" data-magnetic>Skills</a></li>
-      <li><a href="#education" class="nav-link" data-magnetic>Education</a></li>
-      <li><a href="#certifications" class="nav-link" data-magnetic>Certs</a></li>
-    </ul>
-    <a href="mailto:wahyuwons@gmail.com" class="nav-hire btn-mag" data-magnetic>Hire Me</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- Mobile Nav -->
-  <div class="mob-overlay" id="mob-overlay">
-    <div class="mob-nav">
-      <a href="#about" class="mob-link" data-index="01">About</a>
-      <a href="#experience" class="mob-link" data-index="02">Experience</a>
-      <a href="#skills" class="mob-link" data-index="03">Skills</a>
-      <a href="#education" class="mob-link" data-index="04">Education</a>
-      <a href="#contact" class="mob-link" data-index="05">Contact</a>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-  <section id="hero">
-    <div class="hero-noise"></div>
-    <canvas id="hero-canvas"></canvas>
-
-    <div class="hero-content">
-      <div class="hero-badge" data-hero-el>
-        <span class="badge-pulse"></span>
-        <span>Open to Strategic Partnerships</span>
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="hero-badge" id="hero-badge">
+        <span class="badge-dot"></span>Open to Strategic Partnerships
       </div>
-
-      <h1 class="hero-title">
-        <span class="hero-line" data-hero-line>
-          <span class="hero-word">Technology</span>
-        </span>
-        <span class="hero-line" data-hero-line>
-          <em class="hero-word">Director</em>
-        </span>
-        <span class="hero-line" data-hero-line>
-          <span class="hero-word">&amp; AI</span>
-          <span class="hero-word">Leader</span>
+      <h1 class="hero-h1" id="hero-h1">
+        <span class="h-line"><span class="h-word">Technology</span></span>
+        <span class="h-line"><em class="h-word">Director</em></span>
+        <span class="h-line">
+          <span class="h-word">&amp; AI</span>&nbsp;<span class="h-word">Leader</span>
         </span>
       </h1>
-
-      <p class="hero-desc" data-hero-el>
+      <p class="hero-desc" id="hero-desc">
         Building intelligent digital systems that transform how governments and
         organizations operate — from large-scale CMS ecosystems to AI-powered
         workflow automation across Indonesia and the United States.
       </p>
-
-      <div class="hero-actions" data-hero-el>
-        <a href="#contact" class="btn btn-gold" data-magnetic>
-          <span>Let's Connect</span>
-          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#experience" class="btn btn-outline" data-magnetic>
-          <span>View Work</span>
-        </a>
+      <div class="hero-btns" id="hero-btns">
+        <a href="#contact"    class="btn btn-gold"    data-mag><span>Let's Connect</span> <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#experience" class="btn btn-outline"  data-mag><span>View Work</span></a>
       </div>
     </div>
 
-    <!-- Right Cards -->
-    <div class="hero-cards" data-hero-cards>
+    <!-- Right cards -->
+    <div class="hero-right" id="hero-right">
       <div class="hcard hcard-role">
-        <div class="hcard-label">Currently</div>
-        <div class="hcard-title">Director</div>
-        <div class="hcard-sub">PT Teknologi Indonesia Mandiri</div>
-        <div class="hcard-divider"></div>
-        <div class="hcard-label">Also</div>
-        <div class="hcard-title">Team Leader & AI Researcher</div>
-        <div class="hcard-sub">Deskteam360 — Arizona, USA</div>
+        <div class="hcard-chip">Currently</div>
+        <div class="hcard-t">Director</div>
+        <div class="hcard-s">PT Teknologi Indonesia Mandiri</div>
+        <div class="hcard-div"></div>
+        <div class="hcard-chip">Also</div>
+        <div class="hcard-t">Team Leader & AI Researcher</div>
+        <div class="hcard-s">Deskteam360 · Arizona, USA</div>
       </div>
-      <div class="hcard-row">
+      <div class="hcard-row2">
         <div class="hcard hcard-sm">
-          <div class="hcard-label">Experience</div>
-          <div class="hcard-num" data-count="4">0</div>
+          <div class="hcard-chip">Experience</div>
+          <div class="hcard-big" data-count="4">0</div>
           <div class="hcard-unit">+ Years</div>
         </div>
         <div class="hcard hcard-sm">
-          <div class="hcard-label">Team Size</div>
-          <div class="hcard-num" data-count="9">0</div>
+          <div class="hcard-chip">Team</div>
+          <div class="hcard-big" data-count="9">0</div>
           <div class="hcard-unit">+ People</div>
         </div>
       </div>
       <div class="hcard hcard-loc">
-        <div class="hcard-label">Location</div>
-        <div class="hcard-loc-name">Malang, West Java 🇮🇩</div>
-        <div class="hcard-loc-sub">Indonesia · English C1 Advanced</div>
-      </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="hero-scroll" data-hero-el>
-      <div class="scroll-track"><div class="scroll-thumb"></div></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ MARQUEE ═══════════════════════════ -->
-  <div class="marquee-section">
-    <div class="marquee-track" id="marquee-track">
-      <div class="marquee-inner">
-        <span class="m-item"><span class="m-dot"></span>WordPress Expert</span>
-        <span class="m-item"><span class="m-dot"></span>AI Implementation</span>
-        <span class="m-item"><span class="m-dot"></span>Duda Certified</span>
-        <span class="m-item"><span class="m-dot"></span>Government Systems</span>
-        <span class="m-item"><span class="m-dot"></span>cPanel Professional</span>
-        <span class="m-item"><span class="m-dot"></span>Team Leadership</span>
-        <span class="m-item"><span class="m-dot"></span>CRM Integration</span>
-        <span class="m-item"><span class="m-dot"></span>ERP Development</span>
-        <span class="m-item"><span class="m-dot"></span>UI/UX Design</span>
-        <span class="m-item"><span class="m-dot"></span>QA Automation</span>
-      </div>
-      <div class="marquee-inner" aria-hidden="true">
-        <span class="m-item"><span class="m-dot"></span>WordPress Expert</span>
-        <span class="m-item"><span class="m-dot"></span>AI Implementation</span>
-        <span class="m-item"><span class="m-dot"></span>Duda Certified</span>
-        <span class="m-item"><span class="m-dot"></span>Government Systems</span>
-        <span class="m-item"><span class="m-dot"></span>cPanel Professional</span>
-        <span class="m-item"><span class="m-dot"></span>Team Leadership</span>
-        <span class="m-item"><span class="m-dot"></span>CRM Integration</span>
-        <span class="m-item"><span class="m-dot"></span>ERP Development</span>
-        <span class="m-item"><span class="m-dot"></span>UI/UX Design</span>
-        <span class="m-item"><span class="m-dot"></span>QA Automation</span>
+        <div class="hcard-chip">Location</div>
+        <div class="hcard-t">Malang, West Java 🇮🇩</div>
+        <div class="hcard-s">Indonesia · English C1 Advanced</div>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-eyebrow" data-reveal>
-        <span class="eyebrow-num">01</span>
-        <span class="eyebrow-line"></span>
-        <span class="eyebrow-text">About Me</span>
-      </div>
-      <h2 class="section-title" data-split-title>
-        The person<br /><em>behind the work</em>
-      </h2>
+  <!-- Scroll hint -->
+  <div class="hero-scroll" id="hero-scroll">
+    <div class="scroll-box"><div class="scroll-thumb"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-      <div class="about-grid">
-        <div class="about-left">
-          <p class="about-para" data-reveal>
-            A results-oriented technology leader with over <strong>4 years of experience</strong> in digital transformation
-            and large-scale technical projects. My foundation in
-            <strong>Electrical Engineering</strong> gives me a rigorous, systems-first approach to every problem.
-          </p>
-          <p class="about-para" data-reveal>
-            I specialize in <strong>CMS ecosystems</strong>, AI workflow automation, and managing cross-functional
-            teams across continents — from government-scale infrastructure in Indonesia to international
-            agency work in the United States.
-          </p>
-          <p class="about-para" data-reveal>
-            Whether it's directing the rollout of a city-wide licensing platform or researching AI tools
-            that cut project delivery time in half, I build things that <strong>actually move the needle</strong>.
-          </p>
+<!-- ═══════ MARQUEE ═══════ -->
+<div class="marquee-wrap">
+  <div class="marquee-inner" id="marquee">
+    <div class="m-row">
+      <span class="mi"><span class="mdot"></span>WordPress Expert</span>
+      <span class="mi"><span class="mdot"></span>AI Implementation</span>
+      <span class="mi"><span class="mdot"></span>Duda Certified</span>
+      <span class="mi"><span class="mdot"></span>Government Systems</span>
+      <span class="mi"><span class="mdot"></span>cPanel Professional</span>
+      <span class="mi"><span class="mdot"></span>Team Leadership</span>
+      <span class="mi"><span class="mdot"></span>CRM Integration</span>
+      <span class="mi"><span class="mdot"></span>ERP Development</span>
+      <span class="mi"><span class="mdot"></span>UI/UX Design</span>
+      <span class="mi"><span class="mdot"></span>QA Automation</span>
+    </div>
+    <div class="m-row" aria-hidden="true">
+      <span class="mi"><span class="mdot"></span>WordPress Expert</span>
+      <span class="mi"><span class="mdot"></span>AI Implementation</span>
+      <span class="mi"><span class="mdot"></span>Duda Certified</span>
+      <span class="mi"><span class="mdot"></span>Government Systems</span>
+      <span class="mi"><span class="mdot"></span>cPanel Professional</span>
+      <span class="mi"><span class="mdot"></span>Team Leadership</span>
+      <span class="mi"><span class="mdot"></span>CRM Integration</span>
+      <span class="mi"><span class="mdot"></span>ERP Development</span>
+      <span class="mi"><span class="mdot"></span>UI/UX Design</span>
+      <span class="mi"><span class="mdot"></span>QA Automation</span>
+    </div>
+  </div>
+</div>
 
-          <div class="about-stats">
-            <div class="stat-box" data-reveal data-delay="0">
-              <div class="stat-num" data-count="4">0</div>
-              <div class="stat-plus">+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-box" data-reveal data-delay="1">
-              <div class="stat-num" data-count="9">0</div>
-              <div class="stat-plus">+</div>
-              <div class="stat-label">Team Members Led</div>
-            </div>
-            <div class="stat-box" data-reveal data-delay="2">
-              <div class="stat-num" data-count="3">0</div>
-              <div class="stat-plus">+</div>
-              <div class="stat-label">Gov. Projects</div>
-            </div>
-            <div class="stat-box" data-reveal data-delay="3">
-              <div class="stat-num" data-count="8">0</div>
-              <div class="stat-plus">+</div>
-              <div class="stat-label">Certifications</div>
-            </div>
-          </div>
+<!-- ═══════ ABOUT ═══════ -->
+<section id="about" class="sec">
+  <!-- Section ornaments -->
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-circle-grid" viewBox="0 0 180 180">
+      <circle cx="90" cy="90" r="85" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="1" stroke-dasharray="6 12"/>
+      <circle cx="90" cy="90" r="60" fill="none" stroke="rgba(233,196,106,.04)" stroke-width="1"/>
+      <circle cx="90" cy="90" r="35" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="1"/>
+      <circle cx="90" cy="90" r="4" fill="rgba(233,196,106,.2)"/>
+    </svg>
+    <svg class="sorn sorn-corner-br" viewBox="0 0 100 100">
+      <path d="M0 100 L100 100 L100 0" fill="none" stroke="rgba(233,196,106,.12)" stroke-width="1"/>
+      <path d="M20 100 L100 100 L100 20" fill="none" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <path d="M40 100 L100 100 L100 40" fill="none" stroke="rgba(233,196,106,.05)" stroke-width="1"/>
+    </svg>
+    <svg class="sorn sorn-plus" viewBox="0 0 30 30">
+      <line x1="15" y1="0" x2="15" y2="30" stroke="rgba(233,196,106,.3)" stroke-width="1"/>
+      <line x1="0" y1="15" x2="30" y2="15" stroke="rgba(233,196,106,.3)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="eyebrow" data-sc>
+      <span class="e-num">01</span><span class="e-line"></span><span class="e-txt">About Me</span>
+    </div>
+    <h2 class="sec-title" data-sc>The person <em>behind the work</em></h2>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <p class="ap" data-sc>A results-oriented technology leader with over <strong>4 years of experience</strong> in digital transformation. My foundation in <strong>Electrical Engineering</strong> gives me a rigorous, systems-first approach to every problem.</p>
+        <p class="ap" data-sc>I specialize in <strong>CMS ecosystems</strong>, AI workflow automation, and managing cross-functional teams across continents — from government-scale infrastructure in Indonesia to international agency work in Arizona, USA.</p>
+        <p class="ap" data-sc>Whether directing the rollout of a city-wide licensing platform or researching AI tools that cut delivery time in half, I build things that <strong>actually move the needle</strong>.</p>
+        <div class="stats-row">
+          <div class="stat" data-sc data-d="0"><span class="sn" data-count="4">0</span><span class="sp">+</span><div class="sl">Years</div></div>
+          <div class="stat" data-sc data-d="1"><span class="sn" data-count="9">0</span><span class="sp">+</span><div class="sl">Team Led</div></div>
+          <div class="stat" data-sc data-d="2"><span class="sn" data-count="3">0</span><span class="sp">+</span><div class="sl">Gov. Projects</div></div>
+          <div class="stat" data-sc data-d="3"><span class="sn" data-count="8">0</span><span class="sp">+</span><div class="sl">Certs</div></div>
         </div>
-
-        <div class="about-right" data-reveal-right>
-          <div class="skill-list">
-            <div class="skill-item" data-skill>
-              <span class="skill-name">WordPress & CMS</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="95"></div></div>
-              <span class="skill-pct">95%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">Strategic Leadership</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">AI Implementation</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
-              <span class="skill-pct">85%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">Team Management</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="88"></div></div>
-              <span class="skill-pct">88%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">Web Development</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
-              <span class="skill-pct">80%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">Product Management</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="78"></div></div>
-              <span class="skill-pct">78%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">QA & Automation</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
-              <span class="skill-pct">75%</span>
-            </div>
-            <div class="skill-item" data-skill>
-              <span class="skill-name">UI/UX Design</span>
-              <div class="skill-track"><div class="skill-fill" data-pct="72"></div></div>
-              <span class="skill-pct">72%</span>
-            </div>
-          </div>
+      </div>
+      <div class="about-right" data-sc-r>
+        <div class="skill-list">
+          <div class="sk" data-sc-sk><span class="sk-n">WordPress & CMS</span><div class="sk-tr"><div class="sk-f" data-pct="95"></div></div><span class="sk-p">95%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">Strategic Leadership</span><div class="sk-tr"><div class="sk-f" data-pct="90"></div></div><span class="sk-p">90%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">AI Implementation</span><div class="sk-tr"><div class="sk-f" data-pct="85"></div></div><span class="sk-p">85%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">Team Management</span><div class="sk-tr"><div class="sk-f" data-pct="88"></div></div><span class="sk-p">88%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">Web Development</span><div class="sk-tr"><div class="sk-f" data-pct="80"></div></div><span class="sk-p">80%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">Product Management</span><div class="sk-tr"><div class="sk-f" data-pct="78"></div></div><span class="sk-p">78%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">QA & Automation</span><div class="sk-tr"><div class="sk-f" data-pct="75"></div></div><span class="sk-p">75%</span></div>
+          <div class="sk" data-sc-sk><span class="sk-n">UI/UX Design</span><div class="sk-tr"><div class="sk-f" data-pct="72"></div></div><span class="sk-p">72%</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
-  <section id="experience" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow" data-reveal>
-        <span class="eyebrow-num">02</span>
-        <span class="eyebrow-line"></span>
-        <span class="eyebrow-text">Experience</span>
+<!-- ═══════ EXPERIENCE ═══════ -->
+<section id="experience" class="sec sec-alt">
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-exp-arc" viewBox="0 0 300 300">
+      <path d="M150 20 A130 130 0 0 1 280 150" fill="none" stroke="rgba(233,196,106,.1)" stroke-width="1" stroke-dasharray="4 8"/>
+      <path d="M150 50 A100 100 0 0 1 250 150" fill="none" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <circle cx="150" cy="20" r="4" fill="rgba(233,196,106,.25)"/>
+      <circle cx="280" cy="150" r="4" fill="rgba(233,196,106,.25)"/>
+    </svg>
+    <svg class="sorn sorn-zigzag" viewBox="0 0 200 40">
+      <polyline points="0,20 20,5 40,35 60,5 80,35 100,5 120,35 140,5 160,35 180,5 200,20" fill="none" stroke="rgba(233,196,106,.12)" stroke-width="1"/>
+    </svg>
+    <svg class="sorn sorn-square-orn" viewBox="0 0 80 80">
+      <rect x="4" y="4" width="72" height="72" fill="none" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <rect x="16" y="16" width="48" height="48" fill="none" stroke="rgba(233,196,106,.08)" stroke-width="1" transform="rotate(45 40 40)"/>
+      <circle cx="40" cy="40" r="5" fill="none" stroke="rgba(233,196,106,.2)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="eyebrow" data-sc><span class="e-num">02</span><span class="e-line"></span><span class="e-txt">Experience</span></div>
+    <h2 class="sec-title" data-sc>Where I've <em>made an impact</em></h2>
+    <div class="exp-layout">
+      <div class="exp-nav" data-sc-l>
+        <button class="exp-tab active" data-tab="t1"><span class="td"></span><span class="ti"><span class="tc">PT Teknologi Indonesia Mandiri</span><span class="tcc">Indonesia</span></span></button>
+        <button class="exp-tab" data-tab="t2"><span class="td"></span><span class="ti"><span class="tc">Deskteam360</span><span class="tcc">Arizona, USA</span></span></button>
+        <button class="exp-tab" data-tab="t3"><span class="td"></span><span class="ti"><span class="tc">PT Bumi Inovasi Ganapati</span><span class="tcc">Surabaya</span></span></button>
+        <button class="exp-tab" data-tab="t4"><span class="td"></span><span class="ti"><span class="tc">PT PLN</span><span class="tcc">Pasuruan</span></span></button>
+        <div class="tab-line"></div>
       </div>
-      <h2 class="section-title" data-split-title>
-        Where I've<br /><em>made an impact</em>
-      </h2>
-
-      <div class="exp-layout">
-        <!-- Tab Nav -->
-        <div class="exp-nav" data-reveal-left>
-          <button class="exp-tab active" data-tab="t1">
-            <span class="tab-dot"></span>
-            <span class="tab-info">
-              <span class="tab-company">PT Teknologi</span>
-              <span class="tab-country">Indonesia Mandiri</span>
-            </span>
-          </button>
-          <button class="exp-tab" data-tab="t2">
-            <span class="tab-dot"></span>
-            <span class="tab-info">
-              <span class="tab-company">Deskteam360</span>
-              <span class="tab-country">Arizona, USA</span>
-            </span>
-          </button>
-          <button class="exp-tab" data-tab="t3">
-            <span class="tab-dot"></span>
-            <span class="tab-info">
-              <span class="tab-company">PT Bumi Inovasi</span>
-              <span class="tab-country">Ganapati</span>
-            </span>
-          </button>
-          <button class="exp-tab" data-tab="t4">
-            <span class="tab-dot"></span>
-            <span class="tab-info">
-              <span class="tab-company">PT PLN</span>
-              <span class="tab-country">Internship</span>
-            </span>
-          </button>
-          <div class="tab-indicator"></div>
-        </div>
-
-        <!-- Tab Panels -->
-        <div class="exp-panels" data-reveal-right>
-          <div class="exp-panel active" id="t1">
-            <div class="panel-period">Dec 2025 — Present</div>
-            <h3 class="panel-role">Director</h3>
-            <div class="panel-company">PT Teknologi Indonesia Mandiri</div>
-            <div class="panel-loc"><span class="loc-dot"></span>Indonesia</div>
-            <p class="panel-desc">Defining the company's strategic vision with a focus on high-performance government systems. Managing end-to-end operations from client acquisition to technical delivery roadmaps.</p>
-            <ul class="panel-list">
-              <li><strong>PPDB System</strong> — New Student Admission System for the Education Office of Lahat Regency</li>
-              <li><strong>Licensing Platform</strong> — Digital licensing system for the Urban Planning Office of Balikpapan City</li>
-              <li>Overseeing all business and technical operations end-to-end across the organization</li>
-            </ul>
-            <div class="panel-tags">
-              <span class="ptag">Government Tech</span>
-              <span class="ptag">Strategic Planning</span>
-              <span class="ptag">Client Negotiation</span>
-              <span class="ptag">ERP</span>
-            </div>
-          </div>
-
-          <div class="exp-panel" id="t2">
-            <div class="panel-period">Dec 2022 — Present · Full-time Remote</div>
-            <h3 class="panel-role">Team Leader & AI Researcher</h3>
-            <div class="panel-company">Deskteam360</div>
-            <div class="panel-loc"><span class="loc-dot"></span>Arizona, United States</div>
-            <p class="panel-desc">Leading a high-performance team of 6 Developers and 3 Designers. Responsible for delivery quality and workload management across 5+ major web platforms.</p>
-            <ul class="panel-list">
-              <li>Leading AI research initiatives to automate repetitive tasks, significantly boosting team productivity and delivery speed</li>
-              <li>Multi-platform web development management: WordPress, Duda, Shopify, Wix, Squarespace</li>
-              <li>Building integrated CRM workflows to enhance user experience and operational efficiency</li>
-            </ul>
-            <div class="panel-tags">
-              <span class="ptag">AI Research</span>
-              <span class="ptag">WordPress</span>
-              <span class="ptag">Duda</span>
-              <span class="ptag">Shopify</span>
-              <span class="ptag">CRM</span>
-              <span class="ptag">Team Leadership</span>
-            </div>
-          </div>
-
-          <div class="exp-panel" id="t3">
-            <div class="panel-period">Jul 2022 — Feb 2023</div>
-            <h3 class="panel-role">QA Engineer & Associate PM</h3>
-            <div class="panel-company">PT Bumi Inovasi Ganapati</div>
-            <div class="panel-loc"><span class="loc-dot"></span>Surabaya, Indonesia</div>
-            <p class="panel-desc">Dual role in quality assurance and product management for web-based ERP systems. Bridging technical testing and product strategy.</p>
-            <ul class="panel-list">
-              <li>QA automation testing via Selenium IDE with Python, managing output of 3 engineers</li>
-              <li>Writing user stories, PRDs, customer journeys, and benchmark simulations for engineering reference</li>
-              <li>Designing UI/UX mockups and conducting in-depth UX research</li>
-            </ul>
-            <div class="panel-tags">
-              <span class="ptag">Selenium</span>
-              <span class="ptag">Python</span>
-              <span class="ptag">Product Management</span>
-              <span class="ptag">UI/UX</span>
-              <span class="ptag">Figma</span>
-            </div>
-          </div>
-
-          <div class="exp-panel" id="t4">
-            <div class="panel-period">Sep 2021 — Oct 2021</div>
-            <h3 class="panel-role">Analysis Laboratory Intern</h3>
-            <div class="panel-company">PT PLN (State Electricity Company)</div>
-            <div class="panel-loc"><span class="loc-dot"></span>Pasuruan, Indonesia</div>
-            <p class="panel-desc">Contributed to measurement systems and data analysis at Indonesia's national electricity company.</p>
-            <ul class="panel-list">
-              <li>Developed standard operating procedures for measuring instruments</li>
-              <li>Participated in PHB-TR monitoring tool development and field data collection</li>
-              <li>Assisted the laboratory manager in innovation project data analysis</li>
-            </ul>
-            <div class="panel-tags">
-              <span class="ptag">Electrical Engineering</span>
-              <span class="ptag">Data Analysis</span>
-              <span class="ptag">SOPs</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
-  <section id="skills" class="section">
-    <div class="container">
-      <div class="section-eyebrow" data-reveal>
-        <span class="eyebrow-num">03</span>
-        <span class="eyebrow-line"></span>
-        <span class="eyebrow-text">Core Competencies</span>
-      </div>
-      <h2 class="section-title" data-split-title>
-        Built for<br /><em>complex challenges</em>
-      </h2>
-
-      <div class="bento-grid">
-        <div class="bento-card bc-1" data-bento>
-          <div class="bc-num">01</div>
-          <h3 class="bc-title">Strategic Leadership</h3>
-          <div class="bc-tags">
-            <span>Company Director</span><span>Team Management</span>
-            <span>Strategic Planning</span><span>Client Negotiation</span>
-            <span>Cross-functional Teams</span>
-          </div>
-        </div>
-        <div class="bento-card bc-2" data-bento>
-          <div class="bc-num">02</div>
-          <h3 class="bc-title">AI & Systems</h3>
-          <div class="bc-tags">
-            <span>AI Workflow Automation</span><span>Industrial AI Research</span>
-            <span>ERP Development</span><span>Expert Systems</span>
-            <span>Process Optimization</span>
-          </div>
-        </div>
-        <div class="bento-card bc-3 bc-wide" data-bento>
-          <div class="bc-num">03</div>
-          <h3 class="bc-title">Web & CMS Ecosystem</h3>
-          <div class="bc-tags">
-            <span>WordPress Expert</span><span>Duda Certified</span>
-            <span>Shopify</span><span>Elementor</span><span>Wix</span>
-            <span>Squarespace</span><span>API Integration</span>
-            <span>CRM Management</span><span>cPanel Professional</span>
-          </div>
-        </div>
-        <div class="bento-card bc-4 bc-wide" data-bento>
-          <div class="bc-num">04</div>
-          <h3 class="bc-title">Technical Stack</h3>
-          <div class="bc-tags">
-            <span>PHP</span><span>HTML/CSS</span><span>SQL</span>
-            <span>Python</span><span>JavaScript</span><span>Selenium IDE</span>
-            <span>Figma</span><span>Android/Kotlin</span><span>Network Management</span>
-          </div>
-        </div>
-        <div class="bento-card bc-5" data-bento>
-          <div class="bc-num">05</div>
-          <h3 class="bc-title">Product & UX</h3>
-          <div class="bc-tags">
-            <span>PRD Writing</span><span>User Stories</span>
-            <span>UX Research</span><span>Prototyping</span>
-            <span>Customer Journey</span><span>Mockups</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
-  <section id="education" class="section section-alt">
-    <div class="container">
-      <div class="section-eyebrow" data-reveal>
-        <span class="eyebrow-num">04</span>
-        <span class="eyebrow-line"></span>
-        <span class="eyebrow-text">Education</span>
-      </div>
-      <h2 class="section-title" data-split-title>
-        Academic<br /><em>foundation</em>
-      </h2>
-
-      <div class="edu-card" data-reveal>
-        <div class="edu-left">
-          <span class="edu-pill">Bachelor's Degree</span>
-          <h3 class="edu-degree">Electrical Engineering</h3>
-          <div class="edu-school">Universitas Muhammadiyah Malang</div>
-          <div class="edu-period">2018 — 2022</div>
-          <ul class="edu-list">
-            <li>Focus: Network Security, Human-Machine Interface, Mobile Web Development</li>
-            <li>Final Project: Expert System for Cat Disease Diagnosis using Web-based Case-Based Reasoning</li>
+      <div class="exp-panels" data-sc-r>
+        <div class="exp-panel active" id="t1">
+          <div class="pp">Dec 2025 — Present</div><h3 class="pr">Director</h3>
+          <div class="pc">PT Teknologi Indonesia Mandiri</div><div class="pl"><span class="pld"></span>Indonesia</div>
+          <p class="pdesc">Defining the company's strategic vision focused on high-performance government systems. Managing end-to-end business operations from client acquisition to technical roadmaps.</p>
+          <ul class="plist">
+            <li><strong>PPDB System</strong> — New Student Admission System for the Education Office of Lahat Regency</li>
+            <li><strong>Licensing Platform</strong> — Digital licensing system for the Urban Planning Office of Balikpapan City</li>
+            <li>Leading all business and technical operations end-to-end</li>
           </ul>
-          <div class="edu-award">
-            <span class="award-icon">🏆</span>
-            2nd Best Graduate — Electrical Engineering Faculty
-          </div>
+          <div class="ptags"><span>Government Tech</span><span>Strategic Planning</span><span>Client Negotiation</span><span>ERP</span></div>
         </div>
-        <div class="edu-right">
-          <div class="gpa-ring">
-            <svg class="gpa-svg" viewBox="0 0 120 120">
-              <circle class="gpa-bg" cx="60" cy="60" r="50"/>
-              <circle class="gpa-progress" cx="60" cy="60" r="50" data-pct="88.5"/>
-            </svg>
-            <div class="gpa-text">
-              <span class="gpa-num">3.54</span>
-              <span class="gpa-max">/ 4.00</span>
-            </div>
-          </div>
+        <div class="exp-panel" id="t2">
+          <div class="pp">Dec 2022 — Present · Remote</div><h3 class="pr">Team Leader & AI Researcher</h3>
+          <div class="pc">Deskteam360</div><div class="pl"><span class="pld"></span>Arizona, United States</div>
+          <p class="pdesc">Leading a high-performance team of 6 Developers and 3 Designers. Responsible for delivery quality and workload management across 5+ web platforms.</p>
+          <ul class="plist">
+            <li>Leading AI research initiatives to automate repetitive tasks — significantly boosting team productivity</li>
+            <li>Multi-platform development: WordPress, Duda, Shopify, Wix, Squarespace</li>
+            <li>Building integrated CRM workflows to enhance UX and operational efficiency</li>
+          </ul>
+          <div class="ptags"><span>AI Research</span><span>WordPress</span><span>Duda</span><span>Shopify</span><span>CRM</span><span>Team Leadership</span></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ CERTIFICATIONS ═══════════════════════════ -->
-  <section id="certifications" class="section">
-    <div class="container">
-      <div class="section-eyebrow" data-reveal>
-        <span class="eyebrow-num">05</span>
-        <span class="eyebrow-line"></span>
-        <span class="eyebrow-text">Certifications & Training</span>
-      </div>
-      <h2 class="section-title" data-split-title>
-        Always<br /><em>learning</em>
-      </h2>
-
-      <div class="cert-grid">
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2025</div>
-          <div class="cert-name">Duda Certified Developer</div>
-          <div class="cert-org">Duda</div>
-          <div class="cert-line"></div>
+        <div class="exp-panel" id="t3">
+          <div class="pp">Jul 2022 — Feb 2023</div><h3 class="pr">QA Engineer & Associate PM</h3>
+          <div class="pc">PT Bumi Inovasi Ganapati</div><div class="pl"><span class="pld"></span>Surabaya, Indonesia</div>
+          <p class="pdesc">Dual role in quality assurance and product management for web-based ERP systems.</p>
+          <ul class="plist">
+            <li>QA automation testing via Selenium IDE with Python, managing 3 engineers' output</li>
+            <li>Writing user stories, PRDs, customer journeys, and benchmark simulations</li>
+            <li>Designing UI/UX mockups and conducting UX research</li>
+          </ul>
+          <div class="ptags"><span>Selenium</span><span>Python</span><span>Product Management</span><span>UI/UX</span><span>Figma</span></div>
         </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2025</div>
-          <div class="cert-name">cPanel Professional Certification</div>
-          <div class="cert-org">cPanel</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2025</div>
-          <div class="cert-name">Advanced WordPress Certification</div>
-          <div class="cert-org">TemplateMonster</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2025</div>
-          <div class="cert-name">WordPress Elementor Certification</div>
-          <div class="cert-org">TemplateMonster</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2022</div>
-          <div class="cert-name">Javascript 101</div>
-          <div class="cert-org">Altera Academy</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2022</div>
-          <div class="cert-name">Back End 101</div>
-          <div class="cert-org">Altera Academy</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2022</div>
-          <div class="cert-name">Network Administrator</div>
-          <div class="cert-org">BNSP National Certification</div>
-          <div class="cert-line"></div>
-        </div>
-        <div class="cert-card" data-cert>
-          <div class="cert-year">2021</div>
-          <div class="cert-name">Android Development with Kotlin</div>
-          <div class="cert-org">Kampus Merdeka</div>
-          <div class="cert-line"></div>
+        <div class="exp-panel" id="t4">
+          <div class="pp">Sep 2021 — Oct 2021</div><h3 class="pr">Analysis Laboratory Intern</h3>
+          <div class="pc">PT PLN (State Electricity Company)</div><div class="pl"><span class="pld"></span>Pasuruan, Indonesia</div>
+          <p class="pdesc">Contributed to measurement systems and data analysis at Indonesia's national electricity company.</p>
+          <ul class="plist">
+            <li>Developed standard operating procedures for measuring instruments</li>
+            <li>Participated in PHB-TR monitoring tool development and field data collection</li>
+            <li>Assisted the laboratory manager in innovation project data analysis</li>
+          </ul>
+          <div class="ptags"><span>Electrical Engineering</span><span>Data Analysis</span><span>SOPs</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <div class="contact-center">
-        <div class="section-eyebrow" data-reveal style="justify-content:center">
-          <span class="eyebrow-num">06</span>
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Get in Touch</span>
+<!-- ═══════ SKILLS ═══════ -->
+<section id="skills" class="sec">
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-spiral" viewBox="0 0 200 200">
+      <path d="M100,100 m-0,-40 a40,40 0 1,1 0,80 a80,80 0 1,1 0,-160 a120,120 0 1,1 0,240" fill="none" stroke="rgba(233,196,106,.06)" stroke-width="1.5"/>
+    </svg>
+    <svg class="sorn sorn-bracket" viewBox="0 0 60 120">
+      <path d="M40 10 L10 10 L10 110 L40 110" fill="none" stroke="rgba(233,196,106,.2)" stroke-width="1.5"/>
+      <circle cx="10" cy="10"  r="3" fill="rgba(233,196,106,.3)"/>
+      <circle cx="10" cy="110" r="3" fill="rgba(233,196,106,.3)"/>
+    </svg>
+    <svg class="sorn sorn-mesh" viewBox="0 0 120 120">
+      <line x1="0"   y1="0"   x2="120" y2="120" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <line x1="0"   y1="40"  x2="80"  y2="120" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <line x1="0"   y1="80"  x2="40"  y2="120" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <line x1="40"  y1="0"   x2="120" y2="80"  stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <line x1="80"  y1="0"   x2="120" y2="40"  stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+      <line x1="0"   y1="0"   x2="0"   y2="120" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="40"  y1="0"   x2="40"  y2="120" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="80"  y1="0"   x2="80"  y2="120" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="120" y1="0"   x2="120" y2="120" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="0"   y1="0"   x2="120" y2="0"   stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="0"   y1="40"  x2="120" y2="40"  stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="0"   y1="80"  x2="120" y2="80"  stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <line x1="0"   y1="120" x2="120" y2="120" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="eyebrow" data-sc><span class="e-num">03</span><span class="e-line"></span><span class="e-txt">Core Competencies</span></div>
+    <h2 class="sec-title" data-sc>Built for <em>complex challenges</em></h2>
+    <div class="bento">
+      <div class="bc" data-bc><div class="bc-n">01</div><h3>Strategic Leadership</h3><div class="bctags"><span>Company Director</span><span>Team Management</span><span>Strategic Planning</span><span>Client Negotiation</span><span>Cross-functional Teams</span></div></div>
+      <div class="bc" data-bc><div class="bc-n">02</div><h3>AI & Systems</h3><div class="bctags"><span>AI Workflow Automation</span><span>Industrial AI Research</span><span>ERP Development</span><span>Expert Systems</span><span>Process Optimization</span></div></div>
+      <div class="bc bc-wide" data-bc><div class="bc-n">03</div><h3>Web & CMS Ecosystem</h3><div class="bctags"><span>WordPress Expert</span><span>Duda Certified</span><span>Shopify</span><span>Elementor</span><span>Wix</span><span>Squarespace</span><span>API Integration</span><span>CRM Management</span><span>cPanel Professional</span></div></div>
+      <div class="bc bc-wide" data-bc><div class="bc-n">04</div><h3>Technical Stack</h3><div class="bctags"><span>PHP</span><span>HTML/CSS</span><span>SQL</span><span>Python</span><span>JavaScript</span><span>Selenium IDE</span><span>Figma</span><span>Android/Kotlin</span><span>Network Management</span></div></div>
+      <div class="bc" data-bc><div class="bc-n">05</div><h3>Product & UX</h3><div class="bctags"><span>PRD Writing</span><span>User Stories</span><span>UX Research</span><span>Prototyping</span><span>Customer Journey</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EDUCATION ═══════ -->
+<section id="education" class="sec sec-alt">
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-morph" viewBox="0 0 160 160">
+      <path d="M80 10 C130 10 150 30 150 80 C150 130 130 150 80 150 C30 150 10 130 10 80 C10 30 30 10 80 10 Z" fill="none" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+      <path d="M80 30 C115 30 130 45 130 80 C130 115 115 130 80 130 C45 130 30 115 30 80 C30 45 45 30 80 30 Z" fill="none" stroke="rgba(233,196,106,.05)" stroke-width="1"/>
+    </svg>
+    <svg class="sorn sorn-rulers" viewBox="0 0 200 40">
+      <line x1="0" y1="0" x2="200" y2="0" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="16" stroke="rgba(233,196,106,.2)" stroke-width="1"/>
+      <line x1="25" y1="0" x2="25" y2="10" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="16" stroke="rgba(233,196,106,.2)" stroke-width="1"/>
+      <line x1="75" y1="0" x2="75" y2="10" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="100" y1="0" x2="100" y2="20" stroke="rgba(233,196,106,.25)" stroke-width="1"/>
+      <line x1="125" y1="0" x2="125" y2="10" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="150" y1="0" x2="150" y2="16" stroke="rgba(233,196,106,.2)" stroke-width="1"/>
+      <line x1="175" y1="0" x2="175" y2="10" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <line x1="200" y1="0" x2="200" y2="16" stroke="rgba(233,196,106,.2)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="eyebrow" data-sc><span class="e-num">04</span><span class="e-line"></span><span class="e-txt">Education</span></div>
+    <h2 class="sec-title" data-sc>Academic <em>foundation</em></h2>
+    <div class="edu-card" data-sc>
+      <div class="edu-left">
+        <span class="edu-pill">Bachelor's Degree</span>
+        <h3 class="edu-deg">Electrical Engineering</h3>
+        <div class="edu-school">Universitas Muhammadiyah Malang</div>
+        <div class="edu-period">2018 — 2022</div>
+        <ul class="edu-list">
+          <li>Focus: Network Security, Human-Machine Interface, Mobile Web Development</li>
+          <li>Final Project: Expert System for Cat Disease Diagnosis using Web-based Case-Based Reasoning</li>
+        </ul>
+        <div class="edu-award"><span>🏆</span> 2nd Best Graduate — Electrical Engineering Faculty</div>
+      </div>
+      <div class="edu-right">
+        <div class="gpa-wrap">
+          <svg class="gpa-svg" viewBox="0 0 140 140">
+            <circle class="gpa-bg"  cx="70" cy="70" r="58"/>
+            <circle class="gpa-arc" cx="70" cy="70" r="58" data-pct="88.5"/>
+          </svg>
+          <div class="gpa-txt"><span class="gpa-n">3.54</span><span class="gpa-d">/ 4.00</span></div>
         </div>
-        <h2 class="contact-title" data-split-title>
-          Have a project<br />in <em>mind?</em>
-        </h2>
-        <p class="contact-sub" data-reveal>
-          Open to strategic partnerships, government digital projects,<br />
-          AI implementation consulting, and international collaborations.
-        </p>
-
-        <div class="contact-grid">
-          <a href="mailto:wahyuwons@gmail.com" class="clink" data-reveal data-delay="0">
-            <div class="clink-icon">@</div>
-            <div class="clink-body">
-              <span class="clink-label">Email</span>
-              <span class="clink-val">wahyuwons@gmail.com</span>
-            </div>
-          </a>
-          <a href="tel:+6285791567283" class="clink" data-reveal data-delay="1">
-            <div class="clink-icon">☎</div>
-            <div class="clink-body">
-              <span class="clink-label">Phone / WhatsApp</span>
-              <span class="clink-val">+62 857 9156 7283</span>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/wahyu-wono-174033195/" target="_blank" rel="noopener" class="clink" data-reveal data-delay="2">
-            <div class="clink-icon">in</div>
-            <div class="clink-body">
-              <span class="clink-label">LinkedIn</span>
-              <span class="clink-val">wahyu-wono-174033195</span>
-            </div>
-          </a>
-          <a href="https://wahyuwons.github.io/" target="_blank" rel="noopener" class="clink" data-reveal data-delay="3">
-            <div class="clink-icon">&lt;/&gt;</div>
-            <div class="clink-body">
-              <span class="clink-label">Portfolio / GitHub</span>
-              <span class="clink-val">wahyuwons.github.io</span>
-            </div>
-          </a>
-        </div>
-
-        <a href="mailto:wahyuwons@gmail.com" class="cta-btn btn-mag" data-magnetic data-reveal>
-          <span class="cta-text">Send me a message</span>
-          <span class="cta-arrow">→</span>
-        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">Wahyuwono</div>
-      <div class="footer-copy">© 2025 · Malang, West Java, Indonesia</div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/wahyu-wono-174033195/" target="_blank">LinkedIn</a>
-        <a href="https://wahyuwons.github.io/" target="_blank">GitHub</a>
-        <a href="mailto:wahyuwons@gmail.com">Email</a>
-      </div>
+<!-- ═══════ CERTS ═══════ -->
+<section id="certifications" class="sec">
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-star" viewBox="0 0 100 100">
+      <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="none" stroke="rgba(233,196,106,.15)" stroke-width="1"/>
+      <polygon points="50,20 58,42 82,42 63,56 70,78 50,65 30,78 37,56 18,42 42,42" fill="none" stroke="rgba(233,196,106,.08)" stroke-width="1"/>
+    </svg>
+    <svg class="sorn sorn-wave" viewBox="0 0 240 40">
+      <path d="M0 20 C30 5 60 35 90 20 C120 5 150 35 180 20 C210 5 240 35 240 20" fill="none" stroke="rgba(233,196,106,.12)" stroke-width="1.5"/>
+      <path d="M0 30 C30 15 60 45 90 30 C120 15 150 45 180 30 C210 15 240 45 240 30" fill="none" stroke="rgba(233,196,106,.07)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="eyebrow" data-sc><span class="e-num">05</span><span class="e-line"></span><span class="e-txt">Certifications & Training</span></div>
+    <h2 class="sec-title" data-sc>Always <em>learning</em></h2>
+    <div class="cert-grid">
+      <div class="cert" data-cert><div class="cert-yr">2025</div><div class="cert-nm">Duda Certified Developer</div><div class="cert-og">Duda</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2025</div><div class="cert-nm">cPanel Professional Certification</div><div class="cert-og">cPanel</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2025</div><div class="cert-nm">Advanced WordPress Certification</div><div class="cert-og">TemplateMonster</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2025</div><div class="cert-nm">WordPress Elementor Certification</div><div class="cert-og">TemplateMonster</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2022</div><div class="cert-nm">Javascript 101</div><div class="cert-og">Altera Academy</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2022</div><div class="cert-nm">Back End 101</div><div class="cert-og">Altera Academy</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2022</div><div class="cert-nm">Network Administrator</div><div class="cert-og">BNSP National Certification</div><div class="cert-ln"></div></div>
+      <div class="cert" data-cert><div class="cert-yr">2021</div><div class="cert-nm">Android Development with Kotlin</div><div class="cert-og">Kampus Merdeka</div><div class="cert-ln"></div></div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-  <script src="main.js"></script>
+<!-- ═══════ CONTACT ═══════ -->
+<section id="contact" class="sec sec-alt">
+  <div class="sec-orns" aria-hidden="true">
+    <svg class="sorn sorn-big-ring-ct" viewBox="0 0 500 500">
+      <circle cx="250" cy="250" r="220" fill="none" stroke="rgba(233,196,106,.04)" stroke-width="60"/>
+      <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(233,196,106,.03)" stroke-width="1" stroke-dasharray="6 14"/>
+    </svg>
+    <svg class="sorn sorn-ct-hex" viewBox="0 0 80 92">
+      <polygon points="40,2 78,22 78,70 40,90 2,70 2,22" fill="none" stroke="rgba(233,196,106,.18)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="ct-center">
+      <div class="eyebrow" data-sc style="justify-content:center"><span class="e-num">06</span><span class="e-line"></span><span class="e-txt">Get in Touch</span></div>
+      <h2 class="ct-title" data-sc>Have a project<br/>in <em>mind?</em></h2>
+      <p class="ct-sub" data-sc>Open to strategic partnerships, government digital projects,<br/>AI implementation consulting, and international collaborations.</p>
+      <div class="ct-grid">
+        <a href="mailto:wahyuwons@gmail.com" class="clink" data-sc data-d="0"><div class="clink-ic">@</div><div class="clink-b"><span class="clink-l">Email</span><span class="clink-v">wahyuwons@gmail.com</span></div></a>
+        <a href="tel:+6285791567283"         class="clink" data-sc data-d="1"><div class="clink-ic">☎</div><div class="clink-b"><span class="clink-l">Phone / WhatsApp</span><span class="clink-v">+62 857 9156 7283</span></div></a>
+        <a href="https://www.linkedin.com/in/wahyu-wono-174033195/" target="_blank" class="clink" data-sc data-d="2"><div class="clink-ic">in</div><div class="clink-b"><span class="clink-l">LinkedIn</span><span class="clink-v">wahyu-wono-174033195</span></div></a>
+        <a href="https://wahyuwons.github.io/" target="_blank" class="clink" data-sc data-d="3"><div class="clink-ic">&lt;/&gt;</div><div class="clink-b"><span class="clink-l">Portfolio / GitHub</span><span class="clink-v">wahyuwons.github.io</span></div></a>
+      </div>
+      <a href="mailto:wahyuwons@gmail.com" class="cta-btn" data-mag data-sc>
+        Send me a message <span class="cta-arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-logo">Wahyuwono</div>
+    <div class="ft-copy">© 2025 · Malang, West Java, Indonesia</div>
+    <div class="ft-links">
+      <a href="https://www.linkedin.com/in/wahyu-wono-174033195/" target="_blank">LinkedIn</a>
+      <a href="https://wahyuwons.github.io/" target="_blank">GitHub</a>
+      <a href="mailto:wahyuwons@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
