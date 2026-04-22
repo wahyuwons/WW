@@ -33,3 +33,12 @@ h1 {
     font-size: 4rem;
     text-transform: uppercase;
 }
+.reveal-text {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.reveal-text span {
+    display: inline-block;
+    transform: translateY(100%);
+}
