@@ -1,24 +1,42 @@
-// Mengaktifkan plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Animasi sederhana saat halaman dimuat
-gsap.from(".title", { 
-    duration: 1.5, 
-    y: -50, 
-    opacity: 0, 
-    ease: "bounce" 
+// Membuat Timeline yang dipicu oleh Scroll
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "+=1500", // Membuat scroll terasa lebih panjang (pinning)
+        scrub: 1,
+        pin: true,    // MENAHAN layar agar tidak bergeser saat animasi berjalan
+    }
 });
 
-// 2. Animasi yang dipicu oleh Scroll (ScrollTrigger)
-gsap.to(".box", {
-    scrollTrigger: {
-        trigger: ".box",      // Elemen yang memicu animasi
-        start: "top 80%",     // Animasi mulai saat box berada di 80% layar
-        end: "top 30%",       // Animasi selesai
-        scrub: 1,             // Mengikuti kecepatan scroll (sangat keren!)
-    },
-    x: 400,
-    rotation: 360,
-    borderRadius: "50%",
-    backgroundColor: "#2ecc71"
+// Animasi berurutan dalam satu timeline
+tl.to(".hero-title", { scale: 5, opacity: 0, duration: 1 })
+  .to(".hero-subtitle", { y: -100, opacity: 0, duration: 0.5 }, "-=0.5") // Mulai lebih awal
+  .from(".box", { x: -1000, rotation: -720, duration: 1.5 })
+  .to(".box", { backgroundColor: "#ff0055", duration: 0.5 });
+
+// Teknik Stagger: Membuat elemen muncul bergantian
+gsap.to(".reveal-text span", {
+    y: 0,
+    stagger: 0.05, // Jeda antar huruf 0.05 detik
+    duration: 1,
+    ease: "power4.out"
 });
+
+//PAralac
+gsap.to(".background-element", {
+    yPercent: -50, // Bergerak lebih lambat dari scroll asli
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".content",
+        scrub: true
+    }
+});
+
+scrollTrigger: {
+    trigger: ".content",
+    start: "top center",
+    markers: true, // Akan memunculkan garis panduan Start/End di layar
+}
